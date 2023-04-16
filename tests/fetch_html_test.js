@@ -1,10 +1,6 @@
 import { fetchHTML } from "../src/fetch_html.js";
 import { createMockOfFetch } from "./mocks.js";
-import {
-  assertEquals,
-  assertRejects,
-  assertThrows,
-} from "https://deno.land/std@0.183.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.183.0/testing/asserts.ts";
 
 Deno.test("fetchHTML: successful request (mocked)", async () => {
   const mockResponse = `
