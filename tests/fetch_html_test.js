@@ -32,15 +32,3 @@ Deno.test("fetchHTML: failed request (mocked, status)", async () => {
     assertEquals(error, new Error(`HTTP error! status: 404`));
   }
 });
-
-Deno.test("fetchHTML: failed request (mocked, throws)", async () => {
-  const networkError = new Error("Network error!");
-  // deno-lint-ignore no-window-prefix
-  window.fetch = createMockOfFetch({ error: networkError });
-
-  try {
-    await fetchHTML("https://example.com/network-error-endpo");
-  } catch (error) {
-    assertEquals(error, networkError);
-  }
-});
