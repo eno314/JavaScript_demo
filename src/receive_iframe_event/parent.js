@@ -4,4 +4,4 @@ export function receiveIframeEvent(event) {
   }
 }
 
-window.addEventListener("message", receiveIframeEvent);
+addEventListener("message", receiveIframeEvent);
